@@ -6,16 +6,12 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.enchantment.PrepareItemEnchantEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,7 +20,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class buenchant extends JavaPlugin implements Listener{
      
      
-    public void onEnable(){
+    @Override
+ public void onEnable(){
         getLogger().info("buenchant is now enabled.");
         FileConfiguration config = this.getConfig();
          
@@ -37,7 +34,8 @@ public final class buenchant extends JavaPlugin implements Listener{
         }
          
   
-    public void onDisable() {
+    @Override
+	public void onDisable() {
         getLogger().info("buenchant is now disabled.");
         getConfig().options().copyDefaults(true);
         saveConfig();
@@ -74,7 +72,8 @@ public final class buenchant extends JavaPlugin implements Listener{
         }else {}       
             }
      
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
+    @Override
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
         Player player = (Player)sender;
          
     if(cmd.getName().equalsIgnoreCase("bue_reload")){
@@ -87,5 +86,3 @@ public final class buenchant extends JavaPlugin implements Listener{
     return true;
     }
 }
-         
-    
