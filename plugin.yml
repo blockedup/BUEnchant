@@ -10,5 +10,5 @@ commands:
   bue_reload:
     description: Reload the plugin.
     usage: /bue_reload
-    permission: ae.admin
+    permission: bue.admin
     permission-message: You don't have permission to do that.
