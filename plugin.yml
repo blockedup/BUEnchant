@@ -1,16 +1,10 @@
 name: BUEnchant
-main: com.github.blockedup.buenchant
+main: com.github.blockedup.buenchant.buenchant
 version: 1.0
 author: zDylann
 permissions:
   bue.admin:
     description: AntiEnchant full permission.
-    default: op
-  bue.enchant:
-    description: Enchanting permission.
-    default: op
-  bue.unenchant:
-    description: Unenchant permission.
     default: op
 commands:
   bue_reload:
@@ -18,9 +12,3 @@ commands:
     usage: /ae_reload
     permission: ae.admin
     permission-message: You don't have permission to do that.
-  bue_unenchant:
-    description: Unenchant item that you are currently holding.
-    usage: /ae_unenchant
-    permission: ae.unenchant
-    permission-message: You don't have permission to do that.
-    
