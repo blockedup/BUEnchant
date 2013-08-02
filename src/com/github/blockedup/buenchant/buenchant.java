@@ -42,14 +42,6 @@ public final class buenchant extends JavaPlugin implements Listener{
         getConfig().options().copyDefaults(true);
         saveConfig();
     }
- 
-    @EventHandler
-    public void onPlayerEnchant(PrepareItemEnchantEvent event){     
-
-    if(event.getEnchanter().hasPermission("bue.admin") || event.getEnchanter().hasPermission("bue.enchant") || event.getEnchanter().isOp()) {
-        event.setCancelled(false);
-            }
-    }
     
     @EventHandler
     public void onMove(PlayerMoveEvent event){  
@@ -57,7 +49,7 @@ public final class buenchant extends JavaPlugin implements Listener{
             if(!event.getPlayer().isOp() || !event.getPlayer().hasPermission("bue.admin") || books == false){
         if(event.getPlayer().getInventory().contains(Material.ENCHANTED_BOOK)){
             event.getPlayer().getInventory().remove(Material.ENCHANTED_BOOK);
-            event.getPlayer().sendMessage(ChatColor.RED + "Removed Enchanted Book!");
+            event.getPlayer().sendMessage(ChatColor.RED + "Removed Enchanted Book! These are no longer allowed. Do NOT ask for an xp refund.");
             }
         }else {}
             }
@@ -67,7 +59,7 @@ public final class buenchant extends JavaPlugin implements Listener{
             if(!event.getPlayer().isOp() || !event.getPlayer().hasPermission("bue.admin") || books == false){
         if(event.getPlayer().getInventory().contains(Material.ENCHANTED_BOOK)){
             event.getPlayer().getInventory().remove(Material.ENCHANTED_BOOK);
-            event.getPlayer().sendMessage(ChatColor.RED + "Removed Enchanted Book!");
+            event.getPlayer().sendMessage(ChatColor.RED + "Removed Enchanted Book! These are no longer allowed. Do NOT ask for an xp refund.");
             }
         }else {}
             }
@@ -77,7 +69,7 @@ public final class buenchant extends JavaPlugin implements Listener{
             if(!event.getWhoClicked().isOp() || !event.getWhoClicked().hasPermission("bue.admin") || books == false){
         if(event.getWhoClicked().getInventory().contains(Material.ENCHANTED_BOOK)){
             event.getWhoClicked().getInventory().remove(Material.ENCHANTED_BOOK);
-            ((CommandSender) event.getWhoClicked()).sendMessage(ChatColor.RED + "Removed Enchanted Book!");
+            ((CommandSender) event.getWhoClicked()).sendMessage(ChatColor.RED + "Removed Enchanted Book! These are no longer allowed. Do NOT ask for an xp refund.");
             }
         }else {}       
             }
@@ -87,45 +79,11 @@ public final class buenchant extends JavaPlugin implements Listener{
          
     if(cmd.getName().equalsIgnoreCase("bue_reload")){
         if(player.hasPermission("bue.admin") || player.isOp()){
-          Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("bue.enchant");
+          Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("buenchant");
           plugin.reloadConfig();
           player.sendMessage("buenchant successfully reloaded!");
             }
-        }else{
-        if(cmd.getName().equalsIgnoreCase("bue_unenchant")){
-        if(player.hasPermission("bue.admin") || player.isOp() || player.hasPermission("bue.unenchant")){
-        ItemStack item = player.getItemInHand();
-        Material itemtype = player.getItemInHand().getType();
-        int durability = item.getDurability();
-        Inventory inventory = player.getInventory();
-        item.removeEnchantment(Enchantment.ARROW_DAMAGE);
-        item.removeEnchantment(Enchantment.ARROW_FIRE);
-        item.removeEnchantment(Enchantment.ARROW_INFINITE);
-        item.removeEnchantment(Enchantment.ARROW_KNOCKBACK);
-        item.removeEnchantment(Enchantment.DAMAGE_ALL);
-        item.removeEnchantment(Enchantment.DAMAGE_ARTHROPODS);
-        item.removeEnchantment(Enchantment.DAMAGE_UNDEAD);
-        item.removeEnchantment(Enchantment.DIG_SPEED);
-        item.removeEnchantment(Enchantment.DURABILITY);
-        item.removeEnchantment(Enchantment.FIRE_ASPECT);
-        item.removeEnchantment(Enchantment.KNOCKBACK);
-        item.removeEnchantment(Enchantment.LOOT_BONUS_BLOCKS);
-        item.removeEnchantment(Enchantment.LOOT_BONUS_MOBS);
-        item.removeEnchantment(Enchantment.OXYGEN);
-        item.removeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL);
-        item.removeEnchantment(Enchantment.PROTECTION_EXPLOSIONS);
-        item.removeEnchantment(Enchantment.PROTECTION_FALL);
-        item.removeEnchantment(Enchantment.PROTECTION_FIRE);
-        item.removeEnchantment(Enchantment.PROTECTION_PROJECTILE);
-        item.removeEnchantment(Enchantment.SILK_TOUCH);
-        item.removeEnchantment(Enchantment.THORNS);
-        item.removeEnchantment(Enchantment.WATER_WORKER);
-        player.sendMessage(ChatColor.GREEN + "Successfully unenchanted " + player.getItemInHand().getType());
-                    }else{
-        player.sendMessage(ChatColor.RED + "Unsuccessfully unenchanted " + player.getItemInHand().getType() + " because it's number of usage is higher than 0 (" + player.getItemInHand().getDurability() + ").");
-                    }
-                }
-            }
+        }
     return true;
     }
 }
