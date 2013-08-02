@@ -89,7 +89,7 @@ public final class buenchant extends JavaPlugin implements Listener{
         if(player.hasPermission("bue.admin") || player.isOp()){
           Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("bue.enchant");
           plugin.reloadConfig();
-          player.sendMessage("bue.nchant successfully reloaded!");
+          player.sendMessage("buenchant successfully reloaded!");
             }
         }else{
         if(cmd.getName().equalsIgnoreCase("bue_unenchant")){
