@@ -4,7 +4,7 @@ version: 1.0
 author: zDylann
 permissions:
   bue.admin:
-    description: BUEnchant full permission.
+    description: BUEnchant full permissions.
     default: op
 commands:
   bue_reload:
