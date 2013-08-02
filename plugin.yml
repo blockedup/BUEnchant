@@ -4,11 +4,11 @@ version: 1.0
 author: zDylann
 permissions:
   bue.admin:
-    description: AntiEnchant full permission.
+    description: BUEnchant full permission.
     default: op
 commands:
   bue_reload:
     description: Reload the plugin.
-    usage: /ae_reload
+    usage: /bue_reload
     permission: ae.admin
     permission-message: You don't have permission to do that.
