@@ -1,10 +1,10 @@
 BUEnchant
 =========
 
+Blocking Enchantment books since 1969
+
     Creators zdylann & mpotacon
     Licence: GNU Lesser General Public License Version 3 (LGPLv3)
-    
-    Blocking Enchantment books since 1969
     
 Licence:
 
