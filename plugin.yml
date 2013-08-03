@@ -1,7 +1,7 @@
 name: BUEnchant
 main: com.github.blockedup.buenchant.buenchant
 version: 1.0
-author: zDylann
+author: [zDylann, mpotacon]
 permissions:
   bue.admin:
     description: BUEnchant full permissions.
